@@ -41,6 +41,8 @@ function AuthForm() {
         email: enteredEmail, 
         password: enteredPassword,
       });
+
+      
     } else {
       try {
       const result = await createUser(enteredEmail, enteredPassword);
