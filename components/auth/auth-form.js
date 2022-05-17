@@ -6,8 +6,8 @@ async function createUser(email, password) {
     method: 'POST',
     body: JSON.stringify({email, password}),
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   });
 
   const data = await response.json();
