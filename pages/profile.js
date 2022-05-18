@@ -1,4 +1,5 @@
 import { getSession } from 'next-auth/client';
+
 import UserProfile from '../components/profile/user-profile';
 
 function ProfilePage() {
@@ -6,14 +7,14 @@ function ProfilePage() {
 }
 
 export async function getServerSideProps(context) {
-  const result = await getSession({req: context.req});
+  const session = await getSession({ req: context.req });
 
-  if(!session) {
+  if (!session) {
     return {
       redirect: {
         destination: '/auth',
-        permanent: false
-      }
+        permanent: false,
+      },
     };
   }
 
